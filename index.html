@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Phoenix VR Gaming World LLC - Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      padding: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+      /* Simple fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .container { animation: fadeIn 1.5s ease-in-out; }
+
+    /* Neon glow effect */
+    h1, p, .contact {
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+
+    /* Countdown styling */
+    #countdown { margin-top: 20px; font-size: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Replace logo.png with your actual logo file -->
+    <img src="logo.png" alt="Phoenix VR Gaming World Logo" />
+    <h1>COMING SOON</h1>
+    <p>The Phoenix VR Gaming World LLC</p>
+      <h1>COMING SOON</h1>
+    <p>The Phoenix VR Gaming World LLC</p>
+
+    <div id="countdown">Launching Soon...</div>
+
+    <div class="contact">
+      <p>Call: 209-660-9225</p>
+      <p>Call: 209-709-9969</p>
+      <p>Email: thephoenixvrgaming@gmail.com</p>
+    </div>
+  </div>
+
+  <script>
+    // Simple countdown to a date 30 days from now
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 30);
+
+    const countdownEl = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "We Are Live!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
